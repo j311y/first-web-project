@@ -11,5 +11,6 @@ get '/secret' do
 end
 
 get '/cat' do
+  @random_name = %w(Mittens Killer Viking).sample
   erb(:index)
 end
