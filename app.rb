@@ -10,7 +10,13 @@ get '/secret' do
   "secret message"
 end
 
-get '/cat' do
-  @random_name = %w(Mittens Killer Viking).sample
+get '/random-cat' do
+  @name = %w(Mittens Killer Viking).sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
